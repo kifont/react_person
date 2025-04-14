@@ -1,6 +1,5 @@
 export const Person = ({ person }) => {
   const showAge = person.age !== undefined && person.age !== 0;
-  const partnerRole = person.sex === 'f' ? 'husband' : 'wife';
 
   return (
     <section className="Person">
@@ -8,7 +7,7 @@ export const Person = ({ person }) => {
       {showAge && <p className="Person__age">I am {person.age}</p>}
       {person.isMarried ? (
         <p className="Person__partner">
-          {person.partnerName} is my {partnerRole}
+          {person.partnerName} is my {person.sex === 'f' ? 'husband' : 'wife'}
         </p>
       ) : (
         <p className="Person__partner">I am not married</p>
